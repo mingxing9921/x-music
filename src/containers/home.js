@@ -1,9 +1,38 @@
 import React, { Component } from "react";
 import Slider from '../components/common/slider'
 import { connect } from 'react-redux'
-
+import { homeAPI,scrollTopAction } from '../actions/home'
 class App extends Component {
+    constructor(props) {
+        super(props);
+      
+        this.state = {
+          index: 0,
+          page:1
+        };
     
+        this.handleChangeTabs = (value) => () => {
+          this.setState({
+            index: value,
+          });
+        };
+    
+        this.handleChangeIndex = (index) => {
+          this.setState({
+            index,
+          });
+        };
+    
+      }
+    componentDidMount(){
+        const { dispatch,data,scrollTop } = this.props
+        if( data.recommendMusics.length > 1){
+          // 计算有问题
+          this.refs.container.scrollTop = scrollTop>0 ? scrollTop + this.refs.container.clientHeight / 2 - 50 : 0
+        }else{
+          dispatch(homeAPI(data,this.state.page))
+        }
+      }
   render() {
       const {dispatch,data,login,controll}=this.props;
     return (
