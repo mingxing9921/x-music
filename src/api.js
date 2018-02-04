@@ -51,7 +51,7 @@ export default async (url,method='get',data={},headers={'Content-Type':'applicat
 }else{//浏览器不支持fetch
     let requestObj;
     if (window.ActiveXObject) {
-        //requestObj= new ActiveXObject("Microsoft.XMLHTTP");
+       // requestObj= new ActiveXObject("Microsoft.XMLHTTP");
     }else{
         requestObj=new XMLHttpRequest()
     }

@@ -16,14 +16,15 @@ class SimpleSlider extends Component {
             <div className='fullslider'>
                 <Slider {...settings} ref={c=>this.Slider=c}>
                 {
-                    data.map((item)=><div><SliderItem {...item}></SliderItem></div>)
+                    data.map((item,index)=><div key={index}><SliderItem {...item}></SliderItem></div>)
                 }
                 </Slider>
             </div>
         );
     }
 }
-class SliderItem extends Comment{
+export default SimpleSlider;
+class SliderItem extends Component{
     render(){
         return(
             <a href={this.props.extra.innerurl} target='_blank' rel='noopener'>
@@ -32,4 +33,3 @@ class SliderItem extends Comment{
         )
     }
 }
-export default SimpleSlider;
