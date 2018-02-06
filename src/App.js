@@ -4,7 +4,7 @@ class App extends Component {
   render() {
     return (
       <div className="root">
-        <div className="root">{this.props.children}</div>
+        <div className="root">{this.props.routs}</div>
       </div>
     );
   }

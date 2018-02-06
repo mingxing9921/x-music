@@ -24,7 +24,7 @@ class App extends Component {
 
   }
   componentDidMount() {
-    const {dispatch, data, scrollTop} = this.props
+    const {dispatch, data, scrollTop} = this.props;
     if (data.recommendMusics.length > 1) {
       // 计算有问题
       this.refs.container.scrollTop = scrollTop > 0
@@ -126,10 +126,11 @@ class App extends Component {
 
         </div>
         <div className="container" onScroll={() => this.scroll()} ref='container'>
-          <Slider data={data.banner}></Slider>
+          <Slider data={data.banner}/>
           <RecommendList
             data={data.recommendMusics}
             scrollTop={() => this.scrollTopHandler()}/>
+
         </div>
         <Nav/>
       </div>

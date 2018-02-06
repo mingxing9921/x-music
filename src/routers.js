@@ -6,10 +6,10 @@ import React, {Component} from 'react';
 
 class Routers extends Component {
     render() {
+        //把主页嵌套进去
         const Root = ({route}) => (
-            <div>
-                <App/>
-                {renderRoutes(route.routes)}
+            <div className="root">
+                <App routs={renderRoutes(route.routes)}/>
             </div>
         );
         const Routes = [
@@ -26,12 +26,6 @@ class Routers extends Component {
         ];
 
         return (
-            // <Router>
-            //     <div>
-            //     <Route component={App}/>
-            //     <Route exact path="/" component={Home}/>
-            //     </div>
-            // </Router>
             <Router>{renderRoutes(Routes)}</Router>
         );
     }
