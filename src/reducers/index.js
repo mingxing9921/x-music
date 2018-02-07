@@ -1,8 +1,7 @@
-import { combineReducers } from 'redux'
-import  home from './home'
+import {combineReducers} from 'redux'
+import home from './home'
+import spin from './spin'
+import message from './message'
+const reducers = combineReducers({home, spin, message})
 
-const reducers = combineReducers({
-    home
-  }) 
-  
 export default reducers
