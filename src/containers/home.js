@@ -5,6 +5,8 @@ import {homeAPI, scrollTopAction} from '../actions/home'
 import Search from '../components/music/search'
 import RecommendList from '../components/music/recommendList'
 import Nav from '../components/common/Nav'
+import {Link} from 'react-router-dom'
+import Beat from '../components/music/beat'
 class App extends Component {
   constructor(props) {
     super(props);
@@ -86,6 +88,15 @@ class App extends Component {
             onClick={() => this.gotoSearch()}>
             <Search/>
           </div>
+          <Link
+            style={{
+            display: 'flex',
+            flex: 1,
+            justifyContent: 'flex-end'
+          }}
+            to='/play'>
+            <Beat beat={controll === 'play'}/>
+          </Link>
         </div>
         <div className="homeTab">
           <div className="homeTab1">
