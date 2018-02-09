@@ -1,0 +1,81 @@
+{
+"data": [
+	{
+		"id": 5519048,
+		"cover": "http://p3.music.126.net/QkDBzgEZb_ZCgXL-EulPhg==/19066631137383988.jpg",
+		"name": "后来呢-徐浩第二张专辑首支MV公开",
+		"playCount": 492,
+		"briefDesc": "徐浩第二张专辑首支MV公开",
+		"desc": null,
+		"artistName": "徐浩",
+		"artistId": 5821,
+		"duration": 0,
+		"mark": 0,
+		"subed": false,
+		"artists": [
+			{
+			"id": 5821,
+			"name": "徐浩"
+			}
+		]
+	},
+	{
+		"id": 5519048,
+		"cover": "http://p3.music.126.net/QkDBzgEZb_ZCgXL-EulPhg==/19066631137383988.jpg",
+		"name": "后来呢",
+		"playCount": 492,
+		"briefDesc": "徐浩第二张专辑首支MV公开",
+		"desc": null,
+		"artistName": "徐浩",
+		"artistId": 5821,
+		"duration": 0,
+		"mark": 0,
+		"subed": false,
+		"artists": [
+			{
+			"id": 5821,
+			"name": "徐浩"
+			}
+		]
+	},
+	{
+		"id": 5519048,
+		"cover": "http://p3.music.126.net/QkDBzgEZb_ZCgXL-EulPhg==/19066631137383988.jpg",
+		"name": "后来呢",
+		"playCount": 492,
+		"briefDesc": "徐浩第二张专辑首支MV公开",
+		"desc": null,
+		"artistName": "徐浩",
+		"artistId": 5821,
+		"duration": 0,
+		"mark": 0,
+		"subed": false,
+		"artists": [
+			{
+			"id": 5821,
+			"name": "徐浩"
+			}
+		]
+	},
+	{
+		"id": 5519048,
+		"cover": "http://p3.music.126.net/QkDBzgEZb_ZCgXL-EulPhg==/19066631137383988.jpg",
+		"name": "后来呢",
+		"playCount": 492,
+		"briefDesc": "徐浩第二张专辑首支MV公开",
+		"desc": null,
+		"artistName": "徐浩",
+		"artistId": 5821,
+		"duration": 0,
+		"mark": 0,
+		"subed": false,
+		"artists": [
+			{
+			"id": 5821,
+			"name": "徐浩"
+			}
+		]
+	}
+],
+"code": 200
+}

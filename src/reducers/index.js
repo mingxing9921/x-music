@@ -4,6 +4,14 @@ import spin from './spin'
 import message from './message'
 import music from './music'
 import search from './search'
-const reducers = combineReducers({home, spin, message, music, search})
+import login from './login'
+const reducers = combineReducers({
+    home,
+    spin,
+    message,
+    music,
+    search,
+    login
+})
 
 export default reducers

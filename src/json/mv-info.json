@@ -1,0 +1,39 @@
+{
+"loadingPic": "",
+"bufferPic": "",
+"loadingPicFS": "",
+"bufferPicFS": "",
+"subed": false,
+"data": {
+"id": 5520068,
+"name": "모른 척(Pretend Not To Know)",
+"artistId": 125978,
+"artistName": "鲜于贞娥",
+"briefDesc": "鲜于贞娥献唱《推理的女王》OST",
+"desc": "鲜于贞娥演唱的《装作不知道》将优美的钢琴旋律和木吉他以及鲜于贞娥的魅力嗓音融为一体，给人留下深刻印象。从剧中主人公各自的过去和迫切的生活得到共鸣完成了作词作曲，希望包括鲜于贞娥本人的所有人能够由此得到心灵的安慰。",
+"cover": "http://p4.music.126.net/OAuBj1FPhG-nJ2EWvesOYg==/19060034067616710.jpg",
+"coverId": 19060034067616710,
+"playCount": 1828,
+"subCount": 16,
+"shareCount": 3,
+"commentCount": 17,
+"duration": 252000,
+"nType": 0,
+"publishTime": "2017-05-10",
+"brs": {
+"240": "http://v4.music.126.net/20170511213443/e720fe23e53f5e4edbaded13b5bfdfd7/web/cloudmusic/IWIgNDchIjAhYjAwJDAwIA==/mv/5520068/75bbb3dfe974d59f8ecc3b1fce1ede57.mp4",
+"480": "http://v4.music.126.net/20170511213443/56f05f7043948a88e140f0916833dd98/web/cloudmusic/IWIgNDchIjAhYjAwJDAwIA==/mv/5520068/f4426c6eed9124e45f524a98b53256fb.mp4",
+"720": "http://v4.music.126.net/20170511213443/28d195a9d4ce6eeebe9fb41692de968f/web/cloudmusic/IWIgNDchIjAhYjAwJDAwIA==/mv/5520068/353d6af85e6fe3516d561651a366926a.mp4",
+"1080": "http://v4.music.126.net/20170511213443/db29d8ca089b92fc6032adba3988c6da/web/cloudmusic/IWIgNDchIjAhYjAwJDAwIA==/mv/5520068/942c3849d4fdc364f8ce5a0158658e98.mp4"
+},
+"artists": [
+{
+"id": 125978,
+"name": "鲜于贞娥"
+}
+],
+"isReward": false,
+"commentThreadId": "R_MV_5_5520068"
+},
+"code": 200
+}

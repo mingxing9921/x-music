@@ -1,84 +1,51 @@
 import Config from '../config'
 import Storage from '../storage'
+import {spin, spinHidden} from './spin'
 import {alert} from './message'
+import api from '../api'
 
 export const LOGIN = 'LOGIN'
-
 export const LOGIN_ERROR = 'LOGIN_ERROR'
+export const ACCOUNT = 'ACCOUNT'
 
-
-export function loginFetch(username,password,redirect){
-	// fetch login
-	return dispatch => { 
-	 	fetch(Config.loginUrl,{
-		      method: 'POST',
-		      headers: {
-		        'Accept': 'application/json',
-		        'Content-Type': 'application/x-www-form-urlencoded',
-		        'Authorization': 'Basic YWNtZTphY21lc2VjcmV0'		// hard code
-		      },
-		      body: `username=${username}&password=${password}&grant_type=password`,
-        })
-        .then((response) => response.json() )
-        .then((data) => {
-               if(!data.error){
-                	// 持久化
-                   // for(var item in data){
-                   // 	  Storage.put(item.toString(),data[item])
-                   // }
-                   Storage.put('custId',data.custId)
-                   Storage.put('token',data.access_token)
-	               dispatch(login(data.access_token))
-	               // 页面跳转
-	               if (redirect) redirect()
-               }else{
-               	 dispatch(alert('帐号或密码错误'))
-               }
-        })
-        .catch(function(ex) {
-          console.log('parsing failed', ex)
-        })
-	}
-
+const login = (obj) => {
+				return {type: LOGIN, obj}
+}
+const loginError = (obj) => {
+				return {type: LOGIN_ERROR, obj}
 }
 
-
-
-
-export const loginError = (message) => {
-	return {
-		type: LOGIN_ERROR,
-		message
-	}
+const account = (obj) => {
+				return {type: ACCOUNT, obj}
 }
 
-export const login = (token) => {
-	return {
-		type: LOGIN,
-		token
-	}
-}
+/**
+ * 登录
+ * type 登录方式
+ * params 账户名和密码
+ */
 
-
-export function logoutFetch(redirect){
-	// fetch login
-	return dispatch => { 
-	 	fetch('./json/home.json',{
-          method: 'get'
-        })
-        .then((response) => {
-                	// 持久化
-	               Storage.clear()
-	               
-	               dispatch(login(''))
-	               // 页面跳转
-	               if (redirect) redirect()
-               
-
-        })
-        .catch(function(ex) {
-          console.log('parsing failed', ex)
-        })
-	}
-
+export function loginAction(type, params) {
+				return async dispatch => {
+								dispatch(spin());
+								try {
+												//let data = await api( Config.login + type, 'get', params);
+												let data = await api(Config.login, 'get', params);
+												if (data && data.code == 200) {
+																alert("6666666")
+																//dispatch(login(data));
+																dispatch(account(data));
+																Storage.put('uid', data.account.id);
+																dispatch(spinHidden());
+												} else if (data && data.code != 200) {
+																alert("4444")
+																dispatch(loginError(data.msg));
+																dispatch(spinHidden());
+																dispatch(alert(data.msg));
+												}
+								} catch (e) {
+												alert('5555555555555')
+												console.log(e);
+								}
+				}
 }

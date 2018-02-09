@@ -1,0 +1,100 @@
+{
+  "loginType": 1,
+  "code": 200,
+  "account": {
+    "id": 95247470,
+    "userName": "0_litaogor@163.com",
+    "type": 0,
+    "status": 0,
+    "whitelistAuthority": 0,
+    "createTime": 1443622198390,
+    "salt": "",
+    "tokenVersion": 0,
+    "ban": 0,
+    "baoyueVersion": 1,
+    "donateVersion": 0,
+    "vipType": 0,
+    "viptypeVersion": 0,
+    "anonimousUser": false
+  },
+  "profile": {
+    "detailDescription": "",
+    "djStatus": 0,
+    "followed": false,
+    "avatarImgIdStr": "3443670418967620",
+    "backgroundImgIdStr": "2002210674180202",
+    "description": "",
+    "backgroundUrl": "http://p1.music.126.net/pmHS4fcQtcNEGewNb5HRhg==/2002210674180202.jpg",
+    "accountStatus": 0,
+    "nickname": "li772091958",
+    "defaultAvatar": false,
+    "avatarUrl": "http://p1.music.126.net/ZcxEPtQTbiXdc9xMxEsvSQ==/3443670418967620.jpg",
+    "gender": 1,
+    "birthday": 631123200000,
+    "city": 420100,
+    "mutual": false,
+    "remarkName": null,
+    "expertTags": null,
+    "avatarImgId": 3443670418967620,
+    "backgroundImgId": 2002210674180202,
+    "userType": 0,
+    "vipType": 0,
+    "province": 420000,
+    "authStatus": 0,
+    "userId": 95247470,
+    "signature": "我是沉默的存在",
+    "authority": 0
+  },
+  "bindings": [
+    {
+      "expired": false,
+      "expiresIn": 2147483647,
+      "refreshTime": 1444747733,
+      "url": "",
+      "tokenJsonStr": "{\"cellphone\":\"13297907357\",\"hasPassword\":true}",
+      "userId": 95247470,
+      "id": 45441408,
+      "type": 1
+    },
+    {
+      "expired": false,
+      "expiresIn": 2634486,
+      "refreshTime": 1495071949,
+      "url": "http://weibo.com/u/1926047737",
+      "tokenJsonStr": "{\"allow_all_act_msg\":false,\"favourites_count\":0,\"urank\":28,\"verified_trade\":\"\",\"weihao\":\"772091958\",\"verified_source_url\":\"\",\"province\":\"42\",\"screen_name\":\"Mroatunyil\",\"id\":1926047737,\"geo_enabled\":false,\"verified_type\":-1,\"access_token\":\"2.00FAV2GC0Gg461987e1b42fd0PKo6G\",\"pagefriends_count\":0,\"domain\":\"\",\"following\":false,\"name\":\"Mroatunyil\",\"cover_image_phone\":\"http://ww1.sinaimg.cn/crop.0.0.640.640.640/62d58276tw1egwcgivva7j20hs0hsdid.jpg\",\"idstr\":\"1926047737\",\"follow_me\":false,\"friends_count\":52,\"credit_score\":80,\"gender\":\"m\",\"city\":\"1\",\"profile_url\":\"772091958\",\"description\":\"开始时捱一些苦 栽种绝处的花\",\"created_at\":\"Tue Jan 18 16:52:09 +0800 2011\",\"remark\":\"\",\"ptype\":0,\"verified_reason_url\":\"\",\"block_word\":0,\"uid\":\"1926047737\",\"avatar_hd\":\"http://tvax3.sinaimg.cn/crop.0.0.1125.1125.1024/72cd27f9ly8fey6fvz5jkj20v90v9q4x.jpg\",\"mbtype\":0,\"bi_followers_count\":37,\"user_ability\":0,\"verified_reason\":\"\",\"mbrank\":0,\"lang\":\"zh-cn\",\"expires_in\":2634486,\"class\":1,\"remind_in\":\"2634486\",\"star\":0,\"allow_all_comment\":true,\"online_status\":0,\"verified\":false,\"profile_image_url\":\"http://tvax3.sinaimg.cn/crop.0.0.1125.1125.50/72cd27f9ly8fey6fvz5jkj20v90v9q4x.jpg\",\"block_app\":0,\"url\":\"\",\"avatar_large\":\"http://tvax3.sinaimg.cn/crop.0.0.1125.1125.180/72cd27f9ly8fey6fvz5jkj20v90v9q4x.jpg\",\"statuses_count\":87,\"followers_count\":164,\"location\":\"湖北 武汉\",\"insecurity\":{\"sexual_content\":false},\"verified_source\":\"\",\"status\":{\"created_at\":\"Wed May 17 23:25:33 +0800 2017\",\"id\":4108535816602267,\"mid\":\"4108535816602267\",\"idstr\":\"4108535816602267\",\"text\":\"转发微博\",\"source_allowclick\":0,\"source_type\":1,\"source\":\"<a href=\\\"http://app.weibo.com/t/feed/6e3owN\\\" rel=\\\"nofollow\\\">iPhone 7 Plus</a>\",\"favorited\":false,\"truncated\":false,\"in_reply_to_status_id\":\"\",\"in_reply_to_user_id\":\"\",\"in_reply_to_screen_name\":\"\",\"pic_urls\":[],\"geo\":null,\"annotations\":[{\"mapi_request\":true}],\"reposts_count\":0,\"comments_count\":0,\"attitudes_count\":0,\"isLongText\":false,\"mlevel\":0,\"visible\":{\"type\":0,\"list_id\":0},\"biz_feature\":0,\"hasActionTypeCard\":0,\"darwin_tags\":[],\"hot_weibo_tags\":[],\"text_tag_tips\":[],\"userType\":0,\"positive_recom_flag\":0,\"gif_ids\":\"\",\"is_show_bulletin\":2}}",
+      "userId": 95247470,
+      "id": 45441409,
+      "type": 2
+    },
+    {
+      "expired": true,
+      "expiresIn": 7776000,
+      "refreshTime": 1462725293,
+      "url": "",
+      "tokenJsonStr": "{\"access_token\":\"2943B92648A3C24C452CC7173B2F4567\",\"refresh_token\":\"AD42ABB769B2EC154A2F9912E7F19AFA\",\"openid\":\"E142BAA09A22958E560F9C77318C9964\",\"nickname\":\"子木\",\"expires_in\":7776000}",
+      "userId": 95247470,
+      "id": 55994194,
+      "type": 5
+    },
+    {
+      "expired": false,
+      "expiresIn": 7200,
+      "refreshTime": 1495071969,
+      "url": "",
+      "tokenJsonStr": "{\"access_token\":\"SSDOUimHPRvmcDeJv8b1G3l9409sKCMvGpN00Lccy6W3U8mBL2YCj3okEZuuU6WI6Ad40bV-ieqfxbffH1eR5wZlTiZq9pSI7wLk0LVHAFE\",\"expires_in\":7200,\"refresh_token\":\"DEHeLZ1LOUBLbpsk2XDj9haf2JR1srOkR8bLI8b5KqTfv5mNu2JUmbihl1IwsvtkEJwX2NzmZVJjN_RtyASSVaCW2PCkDhEg9uK3B_5FzQg\",\"openid\":\"o5xcytzUcnr8Y5Hiq1Crp1f91x-w\",\"scope\":\"snsapi_login\",\"unionid\":\"oZoefuDzCpEvLRo0Fvk6mRXUeXw8\",\"nickname\":\"子木\"}",
+      "userId": 95247470,
+      "id": 55976185,
+      "type": 10
+    },
+    {
+      "expired": false,
+      "expiresIn": 2147483647,
+      "refreshTime": 0,
+      "url": "",
+      "tokenJsonStr": "{\"email\":\"litaogor@163.com\"}",
+      "userId": 95247470,
+      "id": 44334960,
+      "type": 0
+    }
+  ]
+}
