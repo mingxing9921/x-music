@@ -5,7 +5,7 @@ class Nav extends Component {
     render() {
         return (
             <nav style={Styles.nav} className="footer">
-                <NavLink to="/home" activeClassName="active" style={Styles.tab}>
+                <NavLink to="/discover" activeClassName="active" style={Styles.tab}>
                     <span></span>发现音乐</NavLink>
                 <NavLink to="/music" activeClassName="active" style={Styles.tab}>
                     <span></span>我的音乐</NavLink>

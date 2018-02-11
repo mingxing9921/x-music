@@ -7,13 +7,6 @@ class MusicList extends Component {
                 {this.props.data.length === 1
                     ? <div></div>
                     : <div>
-                        <div className="recommod">
-                            <span
-                                style={{
-                                lineHeight: '1.6rem'
-                            }}>推荐</span>
-                            <span className='arrow-right'></span>
-                        </div>
                         <div style={Styles.container}>
                             {this
                                 .props
@@ -79,7 +72,7 @@ const Styles = {
     name: {
         display: 'flex',
         justifyContent: 'flex-start',
-        fontSize: '1rem',
+        fontSize: '0.8rem',
         width: '9rem'
     },
     item: {

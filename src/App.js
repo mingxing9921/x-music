@@ -45,7 +45,7 @@ class App extends Component {
       <div className="root">
         <Spin spin={spin} />
         <Message data={message} />
-        <div className="root">{this.props.routs}</div>
+        <div className="root">{this.props.children}</div>
         <Audio
           data={currentMusic}
           getCur={e => this.get(e)}

@@ -5,13 +5,15 @@ import message from './message'
 import music from './music'
 import search from './search'
 import login from './login'
+import rank from './rank'
 const reducers = combineReducers({
     home,
     spin,
     message,
     music,
     search,
-    login
+    login,
+    rank
 })
 
 export default reducers

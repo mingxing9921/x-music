@@ -3,6 +3,7 @@ let Config = {}
 
 if (process.env.NODE_ENV === 'production') {
   Config = {
+    
     loginUrl: '/api/uaa/oauth/token',
     test: '/api/resource/test',
     bannerAPI: '/ad/v1/mobile_fmbanner?&appid=1&clientver=1&clienttime=1&key=1',
@@ -43,7 +44,7 @@ if (process.env.NODE_ENV === 'production') {
     newestMV: '/NeteaseCloudMusicApi/mv/first',
     mvInfo: '/NeteaseCloudMusicApi/mv',
     mvComment: '/NeteaseCloudMusicApi/comment/mv',
-    login: '../public/json/login.json'
+    login:'./json/login.json'
   }
 }
 

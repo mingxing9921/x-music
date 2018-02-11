@@ -24,7 +24,7 @@ class Routers extends Component {
                         exact: true,
                         component: Home
                     }, {
-                        path: '/home',
+                        path: '/discover',
                         component: Home
                     }, {
                         path: '/music',

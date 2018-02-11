@@ -30,15 +30,14 @@ export function loginAction(type, params) {
 								dispatch(spin());
 								try {
 												//let data = await api( Config.login + type, 'get', params);
-												let data = await api(Config.login, 'get', params);
+                                                let data = await api(Config.login, 'get', params);
 												if (data && data.code == 200) {
-																alert("6666666")
+                                                    console.log(data)
 																//dispatch(login(data));
 																dispatch(account(data));
 																Storage.put('uid', data.account.id);
 																dispatch(spinHidden());
 												} else if (data && data.code != 200) {
-																alert("4444")
 																dispatch(loginError(data.msg));
 																dispatch(spinHidden());
 																dispatch(alert(data.msg));

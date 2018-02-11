@@ -1,154 +1,154 @@
-import React, {Component} from "react";
-import Slider from '../components/common/slider'
-import {connect} from 'react-redux'
-import {homeAPI, scrollTopAction} from '../actions/home'
-import Search from '../components/music/search'
-import RecommendList from '../components/music/recommendList'
-import Nav from '../components/common/Nav'
-import {Link} from 'react-router-dom'
-import Beat from '../components/music/beat'
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { homeAPI, scrollTopAction } from "../actions/home";
+import Search from "../components/music/search";
+import Nav from "../components/common/Nav";
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch
+} from "react-router-dom";
+import Beat from "../components/music/beat";
+import Recommend from './recommend'
+import PlayList from './playlist'
+import Rank from './rank'
+
+const navArray = ["个性推荐", "歌单", "排行榜", "MV"];
 class App extends Component {
   constructor(props) {
     super(props);
-
+    let index;
+    switch (this.props.history.location.pathname) {
+      case "./discover/recommend":
+        index = 0;
+        break;
+      case "./discover/playlist":
+        index = 1;
+        break;
+      case "./discover/rank":
+        index = 2;
+        break;
+      case "./discover/mv":
+        index = 3;
+        break;
+    }
     this.state = {
-      index: 0, //上导航的索引
+      index: index, //上导航的索引
       page: 1
     };
 
-    this.handleChangeTabs = (value) => () => {
-      this.setState({index: value});
+    this.handleChangeTabs = value => () => {
+      this.setState({ index: value });
+      switch (value) {
+        case 0:
+          this.setState({ flag0: true });
+          setTimeout(() => this.setState({ flag0: false }), 750);
+          this.props.history.push("/discover/recommend");
+          break;
+        case 1:
+          this.setState({ flag1: true });
+          setTimeout(() => this.setState({ flag1: false }), 750);
+          this.props.history.push("/discover/playlist");
+          break;
+        case 2:
+          this.setState({ flag2: true });
+          setTimeout(() => this.setState({ flag2: false }), 750);
+          this.props.history.push("/discover/rank");
+          break;
+        case 3:
+          this.setState({ flag3: true });
+          setTimeout(() => this.setState({ flag3: false }), 750);
+          this.props.history.push("/discover/mv");
+          break;
+      }
     };
 
-    this.handleChangeIndex = (index) => {
-      this.setState({index});
+    this.handleChangeIndex = index => {
+      this.setState({ index });
     };
-
   }
   componentDidMount() {
-    const {dispatch, data, scrollTop} = this.props;
-    if (data.recommendMusics.length > 1) {
-      // 计算有问题
-      this.refs.container.scrollTop = scrollTop > 0
-        ? scrollTop + this.refs.container.clientHeight / 2 - 50
-        : 0
-    } else {
-      dispatch(homeAPI(data, this.state.page))
+    const { dispatch,data,scrollTop } = this.props
+
+    if( data.recommendMusics.length > 1){
+    }else{
+      dispatch(homeAPI(data,this.state.page))
     }
-  }
-  // 记录当前div滚动高度，以便返回时复原
-  scrollTopHandler() {
-    const {disPatch} = this.props;
-    disPatch(scrollTopAction(this.refs.container.scrollTop))
   }
 
-  scroll() {
-    const {dispatch, data} = this.props;
-    console.log('offsetHeight', this.refs.container.offsetHeight)
-    if (this.refs.container.scrollTop + this.refs.container.clientHeight === this.refs.container.scrollHeight) {
-      dispatch(homeAPI(data, this.state.page + 1));
-      this.setState({
-        page: this.state.page + 1
-      })
-    }
-  }
-  gotoSearch() {
-    //跳转页面，原来的方法browserHistory.push('search')
-    this
-      .props
-      .history
-      .push('search')
-  }
+
   render() {
-    const {dispatch, data, login, controll} = this.props;
-    const {index} = this.state;
-    return (
-      <div className="root">
-        <div
-          className="header"
-          style={{
-          background: "#ce3d3e",
-          color: "#fff",
-          display: "flex",
-          justifyContent: "space-between",
-          padding: "0 1rem"
-        }}>
-          <div
-            onClick={() => this.back()}
-            style={{
-            display: 'flex',
-            flex: 1
-          }}></div>
-          <div
-            style={{
-            display: 'flex',
-            flex: 10,
-            justifyContent: 'center'
-          }}
-            onClick={() => this.gotoSearch()}>
-            <Search/>
-          </div>
-          <Link
-            style={{
-            display: 'flex',
-            flex: 1,
-            justifyContent: 'flex-end'
-          }}
-            to='/play'>
-            <Beat beat={controll === 'play'}/>
+    const { dispatch, data, login, controll } = this.props;
+    const { index } = this.state;
+    return <div className="root">
+        <div className="header" style={{ background: "#ce3d3e", color: "#fff", display: "flex", justifyContent: "space-between", padding: "0 1rem" }}>
+          <div onClick={() => this.back()} style={{ display: "flex", flex: 1 }} />
+          <Link style={{ display: "flex", flex: 10, justifyContent: "center" }} to={"/search"}>
+            <Search />
+          </Link>
+          <Link style={{ display: "flex", flex: 1, justifyContent: "flex-end" }} to="/play">
+            <Beat beat={controll === "play"} />
           </Link>
         </div>
         <div className="homeTab">
           <div className="homeTab1">
-            <div
-              style={index === 0
-              ? {
-                color: '#ce3d3e'
-              }
-              : {}}
-              onClick={this.handleChangeTabs(0)}>个性推荐</div>
-            <div
-              style={index === 1
-              ? {
-                color: '#ce3d3e'
-              }
-              : {}}
-              onClick={this.handleChangeTabs(1)}>歌单</div>
-            <div
-              style={index === 2
-              ? {
-                color: '#ce3d3e'
-              }
-              : {}}
-              onClick={this.handleChangeTabs(2)}>主播电台</div>
-            <div
-              style={index === 3
-              ? {
-                color: '#ce3d3e'
-              }
-              : {}}
-              onClick={this.handleChangeTabs(3)}>排行榜</div>
+            {navArray.map((item, i) => (
+              <div style={{
+                  position: "relative",
+                  width: "100%",
+                  height: "100%"
+                }} key={i}
+              >
+                <div
+                  style={Object.assign(
+                    {
+                      display: "flex",
+                      flex: 1,
+                      justifyContent: "center",
+                      alignItems: "center"
+                    },
+                    index === i ? { color: "#ce3d3e" } : {}
+                  )}
+                  onClick={this.handleChangeTabs(i)}
+                >
+                  {item}
+                </div>
+                {this.state[`flag${i}`] ? (
+                  <div
+                    className={this.state[`flag${i}`] ? "ripple" : ""}
+                    style={{
+                      position: "absolute",
+                      backgroundColor: "#ec9999",
+                      left: 0,
+                      width: "100%",
+                      height: "100%"
+                    }}
+                  />
+                ) : (
+                  ""
+                )}
+              </div>
+            ))}
           </div>
-          <div
-            className="highlight"
-            style={{
-            transform: `translateX(${index}00%)`
-          }}></div>
-
+          <div className="highlight" style={{ transform: `translateX(${index}00%)` }} />
         </div>
-        <div className="container" onScroll={() => this.scroll()} ref='container'>
-          <Slider data={data.banner}/>
-          <RecommendList
-            data={data.recommendMusics}
-            scrollTop={() => this.scrollTopHandler()}/>
-
-        </div>
-        <Nav/>
-      </div>
-    );
+        <Switch className="root">
+          <Route path={`${this.props.match.url}/recommend`} component={Recommend} />
+          <Route path={`${this.props.match.url}/playlist`} component={PlayList} />
+          <Route path={`${this.props.match.url}/rank`} component={Rank} />
+          <Route component={Recommend} />
+        </Switch>
+        <Nav />
+      </div>;
   }
 }
 function map(state) {
-  return {data: state.home.home, scrollTop: state.home.scrollTop}
+  return {
+    data: state.home.home,
+    scrollTop: state.home.scrollTop,
+    login: state.login.login,
+    controll: state.music.controll
+  };
 }
 export default connect(map)(App);
