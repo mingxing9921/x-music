@@ -12,6 +12,8 @@ import {
 } from "./actions/music";
 
 class App extends Component {
+//测试
+
     //获取更改的时间进度
     getCur(t){
         const {dispatch}=this.props;
