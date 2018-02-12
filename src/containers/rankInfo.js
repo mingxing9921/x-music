@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
-import { rankInfoAction } from '../actions/rank'
+import React, {Component} from 'react';
+import {connect} from 'react-redux'
+import {Link} from 'react-router-dom'
+import {rankInfoAction} from '../actions/rank'
 import MusicItem from '../components//music/Musicitem'
 import Beat from '../components/music/beat'
 
@@ -11,27 +11,55 @@ class Rank extends Component {
     }
 
     componentDidMount() {
-        const {dispatch,params}=this.props;
+        const {dispatch, params} = this.props;
         dispatch(rankInfoAction(this.props.match.params.rankid))
     }
     render() {
-        const {data,currentHash,controll}=this.props;
-        let url = data.info.imgurl.replace('{size}','400')
+        const {data, currentHash, controll} = this.props;
+        let url = data
+            .info
+            .imgurl
+            .replace('{size}', '400')
         return (
             <div className="root">
-                <div className="header" style={{backgroundColor:'#ce3d3e',color:'#fff',display:'flex',justifyContent:'space-between',padding:'0 1rem'}}>
-                <span onClick={()=>this.props.history.goBack()}>返回</span>
-                <div style={{fontSize:'1.2rem'}}>{data.info.rankname}</div>
-                <Link to='/play'>
-                <Beat beat={controll==='play'}></Beat>
-                </Link>
+                <div
+                    className="header"
+                    style={{
+                    backgroundColor: '#ce3d3e',
+                    color: '#fff',
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    padding: '0 1rem'
+                }}>
+                    <span onClick={() => this.props.history.goBack()}>返回</span>
+                    <div style={{
+                        fontSize: '1.2rem'
+                    }}>{data.info.rankname}</div>
+                    <Link to='/play'>
+                        <Beat beat={controll === 'play'}></Beat>
+                    </Link>
                 </div>
                 <div className="container">
-                <div style={{height:'17rem',backgroundSize:'cover',backgroundImage:`url(${url})`}}>
-                </div>
-                <div>
-                {data.songs.list.map((obj,index)=><MusicItem index={index} music={obj} currentHash={currentHash}></MusicItem>)}
-                </div>
+                    <div
+                        style={{
+                        height: '17rem',
+                        backgroundSize: 'cover',
+                        backgroundImage: `url(${url})`
+                    }}></div>
+                    <div>
+                        {data
+                            .songs
+                            .list
+                            .map((obj, index) =>< MusicItem index = {
+                                index
+                            }
+                            music = {
+                                obj
+                            }
+                            currentHash = {
+                                currentHash
+                            } > </MusicItem>)}
+                    </div>
                 </div>
             </div>
         );
@@ -39,11 +67,7 @@ class Rank extends Component {
 }
 
 function map(state) {
-    return {
-      data: state.rank.info,
-      currentHash: state.music.currentMusic.hash,
-      controll:state.music.controll
-    }
-  }
-  
-  export default connect(map)(Rank)
+    return {data: state.rank.info, currentHash: state.music.currentMusic.hash, controll: state.music.controll}
+}
+
+export default connect(map)(Rank)

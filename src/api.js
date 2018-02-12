@@ -11,37 +11,40 @@ export default async (url,method='get',data={},headers={'Content-Type':'applicat
             }
         }
    
-    if (method==='post') {//如果请求为POST 添加属性
-        Object.defineProperty(requestConfig,'body',{value:data});
-    } else {//如果不是,修改URL
-        let dataStr='';
-        for(let [k,v] of Object.entries(data)){
-            dataStr += `${k}=${v}&`;
-        }
-        if( dataStr !== '' ){
-            url = url + '?' +dataStr.substr(0,dataStr.lastIndexOf('&'));
-        }
-    }
-    //header
-
-    if (Object.keys(headers).length!==0) {//如果header不是空的,把header赋值给requestConfig.headers
-        Object.assign( requestConfig.headers, headers );
-    }
-    try{//尝试fetch连接
-        let response=await fetch(url,requestConfig);
-        if (response.status===401) {//如果要求身份验证,更改地址
-            Storage.clear();
-            window.location.href='/';
-        }else{
-            let data;//数据类型
-            switch (requestConfig.headers.Accept) {
-                case 'application/json':
-                    data=response.json();
-                    break;
-                    case 'text/html':
-                    data=response.text();
-                    break;
+        if( method === 'post' ){
+            Object.defineProperty(requestConfig, 'body', { value: data });
+          }else{
+            let dataStr = '';
+            for (let [k, v] of Object.entries(data)) {
+                dataStr += `${k}=${v}&`;
             }
+            if( dataStr !== '' ){
+                url = url + '?' +dataStr.substr(0,dataStr.lastIndexOf('&'));
+            }
+        }
+        //header
+        
+        if( Object.keys(headers).length !== 0  ){
+            Object.assign( requestConfig.headers, headers );
+        }
+        try{//尝试fetch连接
+            let response=await fetch(url,requestConfig);
+            if (response.status===401) {//如果要求身份验证,更改地址
+                Storage.clear();
+                window.location.href='/';
+            }else{
+                let data;//数据类型
+                
+                switch(requestConfig.headers.Accept) {
+                    case 'application/json':
+                    
+                    console.log(response)
+                data = response.json()
+                  break;
+                case 'text/html':
+                  data = response.text()
+                  break;
+              }
             return data;
         }
     }catch(error){

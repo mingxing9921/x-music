@@ -1,5 +1,5 @@
 {
-  "name": "x-music",
+  "name": "mingxing9921",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -58,26 +58,30 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
     "dev": "webpack-dev-server --config webpack.config.js --hot"
-
   },
-  "proxy":{
+  "proxy": {
     "/kugou": {
-        "target": "http://m.kugou.com",
-        "changeOrigin": true,
-        "pathRewrite": {"^/kugou" : ""}
+      "target": "http://m.kugou.com",
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/kugou": ""
+      }
     },
     "/ad": {
-        "target": "http://ads.service.kugou.com",
-        "changeOrigin": true,
-        "pathRewrite": {"^/ad" : ""}
+      "target": "http://ads.service.kugou.com",
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/ad": ""
+      }
     },
     "/mobilecdn": {
-        "target": "http://mobilecdn.kugou.com",
-        "changeOrigin": true,
-        "pathRewrite": {"^/mobilecdn" : ""}
+      "target": "http://mobilecdn.kugou.com",
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/mobilecdn": ""
+      }
     }
-
-},
+  },
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,mjs}"
@@ -119,5 +123,9 @@
   },
   "eslintConfig": {
     "extends": "react-app"
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/mingxing9921/x-music.git",
+  "author": "mingxing9921 <mingxing9921@163.com>",
+  "license": "MIT"
 }

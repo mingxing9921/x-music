@@ -12,7 +12,7 @@ import {
 } from "./actions/music";
 
 class App extends Component {
-//测试
+//测试3
 
     //获取更改的时间进度
     getCur(t){
@@ -22,6 +22,7 @@ class App extends Component {
             changeTimeFlag:false
         }))
     }
+    
     //更改时间进度
     changeTime(t){
         const {dispatch}=this.props;
