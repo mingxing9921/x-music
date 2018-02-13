@@ -21,7 +21,7 @@ import Search from "./containers/search";
 import App from "./App";
 import Home from "./containers/home";
 import Rankinfo from './containers/rankInfo'
-
+import play from './containers/play'
 
 
 const store = configureStore();
@@ -36,6 +36,7 @@ ReactDOM.render(
         <Route  path={`/account`} component={Account} />
         <Route  path={`/search`} component={Search} />
         <Route  path={`/rankinfo/:rankid`} component={Rankinfo} />
+        <Route  path={`/play`} component={play} />
         <Route component={Home}/>
         </Switch>
       </Router>

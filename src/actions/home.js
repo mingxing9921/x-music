@@ -36,7 +36,6 @@ export function homeAPI(d, page) {
 																: d
 																				.recommendMusics
 																				.concat(musicList.plist.list.info)
-												console.log(musicList)
 												dispatch(home(data))
 												dispatch(spinHidden());
 								} catch (error) {

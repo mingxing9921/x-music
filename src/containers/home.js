@@ -13,6 +13,7 @@ import Beat from "../components/music/beat";
 import Recommend from './recommend'
 import PlayList from './playlist'
 import Rank from './rank'
+import mv from './mv'
 
 const navArray = ["个性推荐", "歌单", "排行榜", "MV"];
 class App extends Component {
@@ -137,6 +138,7 @@ class App extends Component {
           <Route path={`${this.props.match.url}/recommend`} component={Recommend} />
           <Route path={`${this.props.match.url}/playlist`} component={PlayList} />
           <Route path={`${this.props.match.url}/rank`} component={Rank} />
+          <Route  path={`${this.props.match.url}/mv`} component={mv} />
           <Route component={Recommend} />
         </Switch>
         <Nav />

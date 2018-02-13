@@ -6,6 +6,8 @@ import music from './music'
 import search from './search'
 import login from './login'
 import rank from './rank'
+import  mv from './mv'
+
 const reducers = combineReducers({
     home,
     spin,
@@ -13,7 +15,8 @@ const reducers = combineReducers({
     music,
     search,
     login,
-    rank
+    rank,
+    mv
 })
 
 export default reducers

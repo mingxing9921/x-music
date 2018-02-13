@@ -9,8 +9,9 @@ export default async (url,method='get',data={},headers={'Content-Type':'applicat
             headers:{
                 'Accept':'application/json',
             }
+            
         }
-   
+        
         if( method === 'post' ){
             Object.defineProperty(requestConfig, 'body', { value: data });
           }else{
@@ -38,7 +39,7 @@ export default async (url,method='get',data={},headers={'Content-Type':'applicat
                 switch(requestConfig.headers.Accept) {
                     case 'application/json':
                     
-                    console.log(response)
+                   
                 data = response.json()
                   break;
                 case 'text/html':

@@ -40,12 +40,8 @@ class Rank extends Component {
                     </Link>
                 </div>
                 <div className="container">
-                    <div
-                        style={{
-                        height: '17rem',
-                        backgroundSize: 'cover',
-                        backgroundImage: `url(${url})`
-                    }}></div>
+                
+                <div style={{height:'17rem',backgroundSize:'cover',backgroundPosition:'center',backgroundImage:`url(${url})`}}></div>
                     <div>
                         {data
                             .songs
@@ -58,7 +54,7 @@ class Rank extends Component {
                             }
                             currentHash = {
                                 currentHash
-                            } > </MusicItem>)}
+                            } key={index}> </MusicItem>)}
                     </div>
                 </div>
             </div>

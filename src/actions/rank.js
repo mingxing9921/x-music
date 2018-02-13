@@ -30,7 +30,6 @@ export function rankInfoAction(rankid) {
     return async dispatch => {
         dispatch(spin());
         try {
-           
             let data = await api(Config.rankInfoAPI.replace('{rankid}', rankid));
             dispatch(rankInfo(data));
             dispatch(spinHidden());
