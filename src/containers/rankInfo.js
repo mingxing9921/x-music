@@ -46,7 +46,7 @@ class Rank extends Component {
                         {data
                             .songs
                             .list
-                            .map((obj, index) =>< MusicItem index = {
+                            .map((obj, index) =><MusicItem index = {
                                 index
                             }
                             music = {
@@ -54,7 +54,7 @@ class Rank extends Component {
                             }
                             currentHash = {
                                 currentHash
-                            } key={index}> </MusicItem>)}
+                            } key={index}/>)}
                     </div>
                 </div>
             </div>

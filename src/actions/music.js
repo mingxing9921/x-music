@@ -53,6 +53,7 @@ export function firstTimeAction(obj) {
 export function currentMusicAPI(id, firstTime) {
   return async dispatch => {
     try {
+    console.log("66666666")
       let data = await api(Config.musicAPI.replace("HASH", id));
       let krc = await api(
         Config.krcAPI.replace("TIMELENGTH", data.timeLength + "000"),

@@ -37,6 +37,7 @@ ReactDOM.render(
         <Route  path={`/search`} component={Search} />
         <Route  path={`/rankinfo/:rankid`} component={Rankinfo} />
         <Route  path={`/play`} component={play} />
+        <Route  path={`/play/:id`} component={play} />
         <Route component={Home}/>
         </Switch>
       </Router>
