@@ -7,16 +7,17 @@ import search from './search'
 import login from './login'
 import rank from './rank'
 import  mv from './mv'
-
+import album from './album';
 const reducers = combineReducers({
-    home,
-    spin,
-    message,
-    music,
-    search,
-    login,
-    rank,
-    mv
-})
+  home,
+  spin,
+  message,
+  music,
+  search,
+  login,
+  rank,
+  mv,
+  album
+});
 
 export default reducers

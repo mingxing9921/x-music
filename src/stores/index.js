@@ -11,7 +11,7 @@ export default function (initialState) {
 
 				} else {
 								//const logger = createLogger();
-								createStoreWithMiddleware = applyMiddleware(thunk, logger)(createStore);
+								createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
 				}
 				let store = createStoreWithMiddleware(reducers, initialState);
 				//  get token from storage store.dispatch(login(storage.get('token')));

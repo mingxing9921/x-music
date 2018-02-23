@@ -28,7 +28,7 @@ class App extends Component {
                     data={data
                     .recommendMusics
                     .slice(0, 9)}
-                    scrollTop={() => this.scrollTopHandler()}
+                    scrollTop={() =>{}}
                     history={this.props.history}/>
             </div>
         );

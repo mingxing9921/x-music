@@ -8,7 +8,7 @@ class Audio extends Component {
         }
         switch (this.props.controll) {
             case 'play':
-                if (this.props.data.url === '') {
+                if (this.props.data.url !== '') {
                     return this
                         .refs
                         .music

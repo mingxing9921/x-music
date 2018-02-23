@@ -19,12 +19,12 @@ class App extends Component {
     }
 //取得歌曲的数据
     async componentDidMount() {
-        const {dispatch,currentMusic,firstTime}=this.props;
+        const { dispatch, currentMusic, firstTime, controll } = this.props;
         const id=this.props.match.params.id;
         if (id && currentMusic.hash !== id) {
             await dispatch(currentMusicAPI(id,firstTime))
         }
-        console.log(this.props)
+       dispatch(controllAPI('play'));
     }
 
     //更新属性时的方法
@@ -39,7 +39,7 @@ class App extends Component {
     musicControll(){
         const {dispatch,controll,currentMusic}=this.props;
         if (currentMusic.hash==='')return
-        let status=controll==='paly'?'pause':'play'
+        let status=controll==='play'?'pause':'play'
         dispatch(controllAPI(status))
     }
     //格式化秒
@@ -95,10 +95,10 @@ class App extends Component {
     //返回
     goBack(){
         const{dispatch,home}=this.props;
-        if (home.recommendMusic.length>1) {
-            this.props.history.goBack()
+        if (home.recommendMusics.length > 1) {
+          this.props.history.goBack();
         } else {
-            this.props.history.push('/discover')
+          this.props.history.push("/discover");
         }
     }
     render() {
@@ -128,7 +128,7 @@ class App extends Component {
                         <div style={{display:'flex',flex:1}}></div>
                     </div>
 
-                    <div className="container" style={{overflowY:'auto',textAlign:'center',padding:'3rem 0',fontSize:'1.2rem'}} onClick={()=>this.setState({playList:false})}>
+                    <div className="container" style={{overflowY:'auto',textAlign:'center',color:'#aaa',padding:'3rem 0',fontSize:'1.2rem'}} onClick={()=>this.setState({playList:false})}>
                     {
                      currentMusic.krc.map((item,index)=>
                     <div key={index} style={Object.assign({transform:'translateY('+(15-s.index*3.3)+'rem',transition:'transform .5s ease',padding:'1rem 0'},s.time===item.time?{color:'#fff'}:{})}>

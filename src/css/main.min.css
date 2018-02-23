@@ -12,7 +12,9 @@ a {
 html {
     height: 100%;
     background-color: #515363;
-    color:#444
+    color:#444;
+    font-size: 18px;
+
 }
 
 body {
@@ -45,6 +47,7 @@ body {
     overflow-x: hidden;
     width: 100%;
     -webkit-overflow-scrolling: touch;
+
   }
   .container::-webkit-scrollbar {
     display: none;

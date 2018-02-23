@@ -22,7 +22,7 @@ import App from "./App";
 import Home from "./containers/home";
 import Rankinfo from './containers/rankInfo'
 import play from './containers/play'
-
+import Album from "./containers/album";
 
 const store = configureStore();
 ReactDOM.render(
@@ -30,15 +30,16 @@ ReactDOM.render(
     <App>
       <Router>
         <Switch className="root">
-        <Route  path={`/discover`} component={Home} />
-        <Route  path={`/music`} component={Music} />
-        <Route  path={`/friend`} component={Friend} />
-        <Route  path={`/account`} component={Account} />
-        <Route  path={`/search`} component={Search} />
-        <Route  path={`/rankinfo/:rankid`} component={Rankinfo} />
-        <Route  path={`/play`} component={play} />
-        <Route  path={`/play/:id`} component={play} />
-        <Route component={Home}/>
+          <Route path={`/discover`} component={Home} />
+          <Route path={`/music`} component={Music} />
+          <Route path={`/friend`} component={Friend} />
+          <Route path={`/account`} component={Account} />
+          <Route path={`/search`} component={Search} />
+          <Route path={`/album/:id`} component={Album} />
+          <Route path={`/rankinfo/:rankid`} component={Rankinfo} />
+          <Route path={`/play/:id`} component={play} />
+          <Route path={`/play`} component={play} />
+          <Route component={Home} />
         </Switch>
       </Router>
     </App>

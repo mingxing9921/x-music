@@ -51,7 +51,7 @@ class App extends Component {
         <div className="root">{this.props.children}</div>
         <Audio
           data={currentMusic}
-          getCur={e => this.get(e)}
+          getCur={e => this.getCur(e)}
           time={time}
           changeTime={() => this.changeTime()}
           changeMusic={() => this.changeMusic}
